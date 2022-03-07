@@ -3,7 +3,9 @@ apiVersion: extensions/v1beta1
 metadata:
   name: nginx-deployment
 spec:
-  # A deployment's specification really only 
+  containers:
+  - name: nginx
+    image: nginx:1.7.9  # A deployment's specification really only 
   # has a few useful options
   
   # 1. How many copies of each pod do we want?
@@ -26,7 +28,3 @@ spec:
       # This is used in the deployment selector.
       labels:
         deploy: example
-    spec:
-      containers:
-        - name: nginx
-          image: nginx:1.7.9
